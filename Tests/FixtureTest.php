@@ -9,7 +9,11 @@ class FixtureTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->abstractFixture = $this->getMock('Doctrine\Common\DataFixtures\AbstractFixture');
+        $this->abstractFixture = $this->getMockBuilder('Doctrine\Common\DataFixtures\AbstractFixture')
+            ->setMethods(array('getReference', 'load'))
+            ->getMock()
+        ;
+
         parent::setUp();
     }
 
@@ -52,12 +56,12 @@ class FixtureTest extends \PHPUnit_Framework_TestCase
 
     public function testParseReference()
     {
-        $this->abstractFixture->expects($this->any())
+        $this->abstractFixture->expects($this->once())
             ->method('getReference')
             ->with($this->equalTo('client'))
         ;
 
-        $this->loadFixture('TestReference.yml');
+        $this->loadFixture('TestReference.yml')->fetch();
     }
 
     public function testCollection()

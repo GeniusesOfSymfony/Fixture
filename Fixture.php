@@ -107,6 +107,7 @@ class Fixture
         }
 
         if(is_string($value)){
+
             $split = str_split($value);
 
             if ($split[0] === '&') {
