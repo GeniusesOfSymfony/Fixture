@@ -106,8 +106,12 @@ class Fixture
             return;
         }
 
-        if (str_split($value)[0] === '&') {
-            $value = $this->fixture->getReference(substr($value,1));
+        if(is_string($value)){
+            $split = str_split($value);
+
+            if ($split[0] === '&') {
+                $value = $this->fixture->getReference(substr($value,1));
+            }
         }
     }
 }
