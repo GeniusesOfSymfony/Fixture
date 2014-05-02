@@ -1,0 +1,7 @@
+collection:
+    scope: [ "roles" ]
+database:
+    roles:
+        - 'client'
+        - 'editor'
+        - 'admin'
