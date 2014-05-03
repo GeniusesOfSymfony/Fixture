@@ -4,6 +4,12 @@
     "keywords": ["Fixtures", "Doctrine Fixtures", "Simple", "Easy", "Tool"],
     "type": "library",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Johann Saunier",
+            "email": "johann_27@hotmail.fr"
+        }
+    ],
     "require":
     {
         "php": ">=5.3.0",
