@@ -24,29 +24,36 @@ class Fixture
     protected $fixture;
 
     /**
-     * @var string
+     * @var string[]
      */
-    protected $loadDirectory;
+    protected $directories;
+
+    /**
+     * @param string[] $directories
+     */
+    public function __construct($directories)
+    {
+        $this->directories = (array) $directories;
+    }
 
     /**
      * @param                 $fileName
-     * @param AbstractFixture $fixture
+     * @param AbstractFixture|null $fixture
      * @param string          $fixturesKey
      */
-    public function __construct($fileName, AbstractFixture $fixture, $fixturesKey = 'database')
+    public function load($fileName, AbstractFixture $fixture = null, $fixturesKey = 'database')
     {
         $this->fileName = $fileName;
         $this->fixturesKey = $fixturesKey;
         $this->fixture = $fixture;
-        $this->loadDirectory = 'src/*/*/DataFixtures/YML/';
     }
 
     /**
-     * @param $loadDirectory
+     * @param $directory
      */
-    public function loadFromDirector($loadDirectory)
+    public function addDirectory($directory)
     {
-        $this->loadDirectory = $loadDirectory;
+        $this->directories[] = $directory;
     }
 
     /**
@@ -59,7 +66,7 @@ class Fixture
         $finder = new Finder();
 
         $files = $finder->files()
-            ->in($this->loadDirectory)
+            ->in($this->directories)
             ->name($this->fileName)
         ;
 
@@ -111,6 +118,10 @@ class Fixture
             $split = str_split($value);
 
             if ($split[0] === '&') {
+                if(null === $this->fixture){
+                    throw new \Exception('Fixture reference is triggered but no AbstractFixture loaded');
+                }
+
                 $value = $this->fixture->getReference(substr($value,1));
             }
         }
