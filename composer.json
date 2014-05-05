@@ -16,7 +16,7 @@
         "gos/parser": "dev-master",
         "doctrine/common": "~2.4",
         "doctrine/data-fixtures": "~1.0",
-        "symfony/finder": "~2.3"
+        "symfony/finder": "2.4.*@dev"
     },
     "autoload": {
         "psr-0": { "Gos\\Component\\Fixture\\": "" }
