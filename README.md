@@ -34,7 +34,7 @@ class LoadUserRoleData extends AbstractFixture
 }
 ```
 
-If you hate store data in php array and dont want take time to create a dedicated component, it's for you. Store their in YAML file and fetch easly your data !
+If you hate store data in php array and dont want take time to create a dedicated component, it's for you. Store their in YAML file and fetch easily your data !
 
 How to use
 ----------
@@ -121,15 +121,15 @@ Roadmap
 
 Actually this component not cover all features you can meet. You can't create reference from YAML, and collection are not fully supported, currently they just convert array into ArrayCollection because we dont have meet this use case at this time, but it's we will, so we plan.
 
-[ ] Generate reference directly from YAML
-[ ] Fully support for Collection
+[] Generate reference directly from YAML
+[] Fully support for Collection
 
 Concret example
 ---------------
 ```php
 public function load(ObjectManager $manager)
 {
-    $fixture = new Fixture(src/*/*/DataFixtures/YML/');
+    $fixture = new Fixture('src/*/*/DataFixtures/YML/');
     $this->localeManager = $this->container->get('gos.i18n_bundle.locale_entity.manager');
 
     $this->fixture->load('LocaleData.yml', $this);
