@@ -37,9 +37,9 @@ class Fixture
     }
 
     /**
-     * @param                 $fileName
+     * @param                      $fileName
      * @param AbstractFixture|null $fixture
-     * @param string          $fixturesKey
+     * @param string               $fixturesKey
      */
     public function load($fileName, AbstractFixture $fixture = null, $fixturesKey = 'database')
     {
@@ -70,7 +70,7 @@ class Fixture
             ->name($this->fileName)
         ;
 
-        foreach($files as $file){
+        foreach ($files as $file) {
             $dataFixtures = Parser::yaml($file->getPathName());
 
             foreach ($dataFixtures[$this->fixturesKey] as $field => $values) {
@@ -113,12 +113,12 @@ class Fixture
             return;
         }
 
-        if(is_string($value)){
+        if (is_string($value)) {
 
             $split = str_split($value);
 
             if ($split[0] === '&') {
-                if(null === $this->fixture){
+                if (null === $this->fixture) {
                     throw new \Exception('Fixture reference is triggered but no AbstractFixture loaded');
                 }
 

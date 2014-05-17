@@ -52,8 +52,8 @@ class FixtureTest extends \PHPUnit_Framework_TestCase
         $this->assertCount(3, $result);
 
         $data = array();
-        foreach($result as $node){
-            foreach($node as $key => $value){
+        foreach ($result as $node) {
+            foreach ($node as $key => $value) {
                 $data[$key][] = $value;
             }
         }
@@ -94,7 +94,7 @@ class FixtureTest extends \PHPUnit_Framework_TestCase
 
         $this->assertCount(3, $result);
 
-        foreach($result as $node){
+        foreach ($result as $node) {
             $this->assertInstanceOf('Doctrine\Common\Collections\ArrayCollection', $node['roles']);
             $this->assertCount(1, $node['roles']);
         }
