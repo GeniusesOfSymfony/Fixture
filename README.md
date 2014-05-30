@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/GeniusesOfSymfony/Fixture.svg?branch=master)](https://travis-ci.org/GeniusesOfSymfony/Fixture) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GeniusesOfSymfony/Fixture/badges/quality-score.png?s=cd81b8904ea4e7fed18dca9f818a70c95cd5609f)](https://scrutinizer-ci.com/g/GeniusesOfSymfony/Fixture/) [![Code Coverage](https://scrutinizer-ci.com/g/GeniusesOfSymfony/Fixture/badges/coverage.png?s=12196f0bbfc1df793c50a3ece8b7f8487df774b0)](https://scrutinizer-ci.com/g/GeniusesOfSymfony/Fixture/) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/be933d87-787f-4a41-949d-65e01eb5b5f7/mini.png)](https://insight.sensiolabs.com/projects/be933d87-787f-4a41-949d-65e01eb5b5f7)
 
-**This project is currently in developpement, so please take care.**
+**This project is currently in development, so please take care.**
 
 Create fixture can be painful mainly when you write them for little entity.You would create them faster as possible and with specific values.
 
