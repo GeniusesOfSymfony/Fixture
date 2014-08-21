@@ -18,7 +18,7 @@ class FixtureTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->abstractFixture = $this->getMockBuilder('Doctrine\Common\DataFixtures\AbstractFixture')
-            ->setMethods(array('getReference', 'load'))
+            ->setMethods(['getReference', 'load'])
             ->getMock()
         ;
 
@@ -51,20 +51,20 @@ class FixtureTest extends \PHPUnit_Framework_TestCase
 
         $this->assertCount(3, $result);
 
-        $data = array();
+        $data = [];
         foreach ($result as $node) {
             foreach ($node as $key => $value) {
                 $data[$key][] = $value;
             }
         }
 
-        $this->assertEquals($data, array(
-            'dummy' => array(
+        $this->assertEquals($data, [
+            'dummy' => [
                 'foo',
                 'bar',
                 'baz'
-            )
-        ));
+            ]
+        ]);
     }
 
     public function testParseReference()

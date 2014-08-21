@@ -37,7 +37,7 @@ class Fixture
     }
 
     /**
-     * @param                      $fileName
+     * @param string               $fileName
      * @param AbstractFixture|null $fixture
      * @param string               $fixturesKey
      */
@@ -49,7 +49,7 @@ class Fixture
     }
 
     /**
-     * @param $directory
+     * @param string $directory
      */
     public function addDirectory($directory)
     {
@@ -61,7 +61,7 @@ class Fixture
      */
     public function fetch()
     {
-        $buffer = array();
+        $buffer = [];
 
         $finder = new Finder();
 
